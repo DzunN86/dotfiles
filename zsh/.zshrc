@@ -121,6 +121,7 @@ alias artisan="php artisan"
 alias lrs="php artisan serve"
 alias lmfs="php artisan migrate:fresh --seed"
 alias lkg="php artisan key:generate"
+alias lro="php artisan optimize"
 
 # ---- Eza (better ls) -----
 alias ls="eza -l --icons --git -a"
