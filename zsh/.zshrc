@@ -110,7 +110,6 @@ source ~/.zsh_profile
 
 alias kittyco="nvim ~/.config/kitty/kitty.conf"
 
-alias n="npm"
 alias nr="npm run"
 alias ni="npm install"
 
@@ -122,6 +121,7 @@ alias lrs="php artisan serve"
 alias lmfs="php artisan migrate:fresh --seed"
 alias lkg="php artisan key:generate"
 alias lro="php artisan optimize"
+alias lsl="php artisan storage:link"
 
 # ---- Eza (better ls) -----
 alias ls="eza -l --icons --git -a"
@@ -140,3 +140,21 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 bindkey -s ^f "tmux-sessionizer\n"
+
+eval "$(starship init zsh)"
+
+# NNN
+export NNN_PLUG="p:preview-tui"
+export NNN_FIFO="/tmp/nnn.fifo"
+
+export PAGER="less -R"
+
+# NNN fast explore
+source $HOME/.local/zsh/quitcd.zsh
+
+# n^M == Return
+bindkey -s '^E' 'n^M'
+
+# One Dark Theme
+BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
