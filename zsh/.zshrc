@@ -143,18 +143,28 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 eval "$(starship init zsh)"
 
-# NNN
-export NNN_PLUG="p:preview-tui"
-export NNN_FIFO="/tmp/nnn.fifo"
+# ---- Yazi Setup ----
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
-export PAGER="less -R"
-
-# NNN fast explore
-source $HOME/.local/zsh/quitcd.zsh
-
-# n^M == Return
-bindkey -s '^E' 'n^M'
-
-# One Dark Theme
-BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
-export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+# # NNN
+# export NNN_PLUG="p:preview-tui"
+# export NNN_FIFO="/tmp/nnn.fifo"
+#
+# export PAGER="less -R"
+#
+# # NNN fast explore
+# source $HOME/.local/zsh/quitcd.zsh
+#
+# # n^M == Return
+# bindkey -s '^E' 'n^M'
+#
+# # One Dark Theme
+# BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+# export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
