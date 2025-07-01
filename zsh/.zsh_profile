@@ -15,6 +15,11 @@ alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
 
+# ZSH
+alias zshco="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias szsh="source ~/.zshrc"
+
 # Dirs
 alias ..="cd .."
 alias ...="cd ../.."
@@ -22,5 +27,29 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+# Larevel
+alias artisan="php artisan"
+alias lrs="php artisan serve"
+alias lmfs="php artisan migrate:fresh --seed"
+alias lkg="php artisan key:generate"
+alias lro="php artisan optimize"
+alias lsl="php artisan storage:link"
+
+# Eza (better ls)
+alias ls="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2  --icons --git"
+
+# Others
 alias cl='clear'
 alias cat="bat"
+alias cd="z"
+alias kittyco="nvim ~/.config/kitty/kitty.conf"
+alias nr="npm run"
+alias ni="npm install"
+alias v="nvim"
+alias vco="nvim ~/.config/nvim"
+
+
+# Bindings
+bindkey -s ^f "tmux-sessionizer\n"
