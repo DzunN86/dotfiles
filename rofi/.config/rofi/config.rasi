@@ -1,8 +1,10 @@
-@theme "~/.config/rofi/nord.rasi"
+@import "~/.cache/wal/colors-rofi-dark"
 
 element-icon { size: 1.65ch ; }
 
 configuration{
+  font: "Ubuntu Mono Nerd Font 10";
+  show-icons: true;
   modes: "window,drun,run,ssh,emoji";
   kb-accept-entry: "Return";
   kb-remove-to-eol: "";
