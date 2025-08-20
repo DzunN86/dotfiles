@@ -7,6 +7,7 @@ set $ws5 "5:5 󰖣 "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
+set $ws9 "9"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 set $i3ipc_dir $HOME/.pyenvs/i3ipc
 
